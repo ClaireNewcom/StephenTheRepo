@@ -1,7 +1,7 @@
-//clothes
+//quiz
 import 'dart:math';
 
-class Clothes {
+class quiz {
 
   late double temp;
   late double feelsLikeTemp;
