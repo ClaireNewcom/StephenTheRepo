@@ -1,4 +1,4 @@
-
+//clothes
 import 'dart:math';
 
 class Clothes {
@@ -86,7 +86,7 @@ class Clothes {
       }
     }
 
-    else if (feelsLikeTemp < 60 /*because 50 and 60 are the same thing*/) {
+    else if (feelsLikeTemp < 60 /*because 50 and 60 are similar*/) {
       clothing.add("pants");
       clothing.add("t-shirt");
       clothing.add("socks");
@@ -133,7 +133,7 @@ class Clothes {
       clothing.add("shorts");
       clothing.add("t-shirt");
       clothing.add("socks");
-      clothing.add("open toed shoes such as sandals");
+      clothing.add("sandals");
 
       if (weatherType.compareTo("hail") == 0) {
         clothing.add("windbreaker coat");
