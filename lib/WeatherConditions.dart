@@ -8,7 +8,7 @@ class WeatherConditions {
   late int humi;
   late String type;
 
-  WeatherConditions(int temp,int wind, int humi, String type){//make it so that this information can be pulled straight from the api in the day weather class.
+  WeatherConditions(int temp, int wind, int humi, String type){//make it so that this information can be pulled straight from the api in the day weather class.
     this.temp = temp;
     this.wind = wind;
     this.humi = humi;
