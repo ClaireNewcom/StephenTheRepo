@@ -14,6 +14,9 @@ class WeatherConditions {
     this.humi = humi;
     this.type = type;
   }
+   WeatherConditions(){//make it so that this information can be pulled straight from the api in the day weather class.
+   
+  }
 
   int getTemp() {
     return temp;
@@ -29,5 +32,27 @@ class WeatherConditions {
 
   String getType() {
     return type;
+  }
+  void setTemp(int tem) {
+    temp = tem;
+  }
+
+  void setWind(it win) {
+    wind = win;
+  }
+
+  void setHumid(int hum) {
+    humi = hum;
+  }
+
+  void setType(String typ) {
+    type = typ;
+  }
+
+  void clear(){
+    temp = 0;
+    wind = 0;
+    humi = 0;
+    type = "";
   }
 }
