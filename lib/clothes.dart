@@ -22,7 +22,7 @@ class Clothes {
     }
   }
 
-  clothingChoice() {
+   List<String> clothingChoice() {
     List<String> clothing = [];
 
     if (feelsLikeTemp > 90) {
@@ -147,5 +147,6 @@ class Clothes {
         clothing.add("sunscreen");
       }
     }
+    return clothing;
   }
 }
