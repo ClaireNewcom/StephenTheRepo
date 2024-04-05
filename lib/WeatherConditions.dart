@@ -15,7 +15,10 @@ class WeatherConditions {
     this.type = type;
   }
    WeatherConditions(){//make it so that this information can be pulled straight from the api in the day weather class.
-   
+    temp = 0;
+    wind = 0;
+    humi = 0;
+    type = '';
   }
 
   int getTemp() {
@@ -53,6 +56,6 @@ class WeatherConditions {
     temp = 0;
     wind = 0;
     humi = 0;
-    type = "";
+    type = '';
   }
 }
