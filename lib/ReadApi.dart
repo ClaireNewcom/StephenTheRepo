@@ -9,15 +9,15 @@ class ReadApi {
     //returns the temp based off of a given time, ie 13 would be 1:00 PM
     return 0;
   }
-  int readTemp(int tim) {
+  int readWind(int tim) {
     //returns wind based on time
     return 0;
   }
-  int readTemp(int tim) {
+  int readHumid(int tim) {
     //returns humidity based on time
     return 0;
   }
-  String readTemp(int tim) {
+  String readType(int tim) {
     //returns weather type based on time
     return ' ';
   }

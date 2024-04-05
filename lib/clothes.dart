@@ -15,8 +15,8 @@ class Clothes {
     humiditylevel = weatherCondition.getHumid();
     weatherType = weatherCondition.getType();
 
-    feelsLikeTemp = 35.74 + 0.6215 * temperature - 35.75 * pow(wind, 0.16) +
-        0.4275 * temperature * pow(wind, 0.16);
+    feelsLikeTemp = 35.74 + 0.6215 * temp - 35.75 * pow(windspeed, 0.16) +
+        0.4275 * temp * pow(windspeed, 0.16);
     if (feelsLikeTemp > temp) {
       feelsLikeTemp = temp;
     }

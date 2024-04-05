@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-
 class WeatherConditions {
 
   late int temp;
@@ -14,12 +11,12 @@ class WeatherConditions {
     this.humi = humi;
     this.type = type;
   }
-   WeatherConditions(){//make it so that this information can be pulled straight from the api in the day weather class.
+   /*WeatherConditions(){//make it so that this information can be pulled straight from the api in the day weather class.
     temp = 0;
     wind = 0;
     humi = 0;
     type = '';
-  }
+  }*/
 
   int getTemp() {
     return temp;
@@ -40,7 +37,7 @@ class WeatherConditions {
     temp = tem;
   }
 
-  void setWind(it win) {
+  void setWind(int win) {
     wind = win;
   }
 

@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
-
 class WeightedList {
 
   late String clothing;
@@ -17,10 +13,10 @@ class WeightedList {
     counter = count;
   }
  
-  WeightedList.addElement(){
+  /*WeightedList.addElement(){
     clothing = "";
     counter = 0;
-  }
+  }*/
 
   String getClothes() {
     return clothing;

@@ -1,26 +1,31 @@
-WWTW ArrayList<String> () {
-	ArrayList<WeightedList> WWTW = new ArrayList<WeightedList>();
+
+class WWTW {
+
+	List<WeightedList> WWTW = [];
+  List<String> calculatedClothes = [];
 	DayWeather.forEach(weatherCondition){
-		Clothes c = new Clothes (weatherCondition)//make it so it works for the new class structure(it has weatehrCondition variable from the class WeatherConditions)
-		ArrayList<String> calculatedClothes = c.calcClothes;
+		Clothes c = new Clothes (weatherCondition);//make it so it works for the new class structure(it has weatehrCondition variable from the class WeatherConditions)
+    calculatedClothes.add(c.clothingChoice);
+  }
+		
 		calculatedClothes.forEach(j){
 			if(WWTW.contains(j)) {	
         WWTW.get(WWTW.indexof(j).incrementCounter());
 			} else {
 			  WeightedList wL = new WeightedList(j,1);
-        WWTW.add(wL) 
+        WWTW.add(wL);
 			}
 		}
 
-	}
-
-  ArrayList<String> chosenClothes = new ArrayList<String>();
+  List<String> chosenClothes = [];
 
   WWTW.forEach(r) {
 	  if ( r.getcounter > 3){
-	    chosenClothes.add(r.getClothes)
+	    chosenClothes.add(r.getClothes);
 	  }
   }
-  Return chosenClothes;
-
+  
+  List<String> getChosenClothes(){
+    return chosenClothes;
+  }
 }
