@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
 
 class WeightedList {
 
@@ -15,11 +12,6 @@ class WeightedList {
   WeightedList.addElement(String str, int count){
     clothing = str;
     counter = count;
-  }
- 
-  WeightedList.addElement(){
-    clothing = "";
-    counter = 0;
   }
 
   String getClothes() {
