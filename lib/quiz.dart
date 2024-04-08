@@ -1,7 +1,7 @@
 //quiz
 import 'dart:math';
 
-class quiz {
+class Quiz {
   WeatherConditions fakeWeather = new WeatherConditions();
   List<String>clothe = [];
 
@@ -33,7 +33,7 @@ class quiz {
     List<String> fakeWhatToWear(){
         return clothe;
     }
-    Boolean correct(String cloth){
+    bool correct(String cloth){
         if(clothe.contains(cloth)){
             return true;
         }else{
