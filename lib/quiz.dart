@@ -31,5 +31,3 @@ class quiz {
             return false;
         }
     }
-
-}

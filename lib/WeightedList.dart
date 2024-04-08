@@ -12,11 +12,6 @@ class WeightedList {
     clothing = str;
     counter = count;
   }
- 
-  /*WeightedList.addElement(){
-    clothing = "";
-    counter = 0;
-  }*/
 
   String getClothes() {
     return clothing;
