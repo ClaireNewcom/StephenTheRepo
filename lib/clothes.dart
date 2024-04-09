@@ -117,7 +117,7 @@ class Clothes {
       }
       else if (weatherType.compareTo("windy") == 0) {
         clothing.add("sweatshirt");
-        clothing.add("Sunscreen");
+        clothing.add("sunscreen");
       }
 
       else if (weatherType.compareTo("rainy") == 0) {
@@ -125,7 +125,7 @@ class Clothes {
         clothing.add("umbrella");
       }
       else {
-        clothing.add("Sunscreen");
+        clothing.add("sunscreen");
       }
     }
 
