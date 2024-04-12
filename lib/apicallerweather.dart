@@ -1,48 +1,54 @@
-import "package:http/http.dart" as http;
-//import 'dart:convert';
 
-//Some of this was learned from https://www.youtube.com/watch?v=jpLa3NjWqs0, some of the code was copied from here.
-//Some of this was learned from https://www.youtube.com/watch?v=c9XyI8zM73k, some of the code was copied from here.
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'weather.dart';
+import 'weatherFuture.dart';
 
-  const String baseURL = '//api.weather.gov/';
+/*
+The code for this section was learned from the tutorial How to Get API with
+Flutter! (Weather Api) made by Bytx on Youtube https://www.youtube.com/watch?v=c9XyI8zM73k.
+We used the api mentioned in the tutorial, and we used the code they supplied.
+ */
 
-  class ACallW {
-    var client = http.Client();
-    String? userAgent;
-
-    Future<dynamic> get(String api) async{
-      var url = Uri.parse(baseURL + api);
-      var _headers = {
-        'Authorization': 'userAgent', //I think this is how this works
-        'api_key': 'claire.newcom.cn@gmail.com',
+class WeatherService {
+  Future<WeatherNow> getCurrentWeatherData(String cityName) async {
+    try {
+      final queryParameters = {
+        'key': '6b2ee4deca3e45e98fe123623241004',
+        'q': cityName,
       };
-      var response = await client.get(url, headers:_headers);
-      if (response.statusCode == 200){
-        return response.body;
-      }
-      else {
-        throw Exception("Can not get weather"); //catch exception in user interface
-      }
-    }
-
-    Future<dynamic> post(String api) async{
-      var url = Uri.parse(baseURL + api);
-      var _headers = {
-        'Authorization': 'userAgent', //I think this is how this works
-        'api_key': 'claire.newcom.cn@gmail.com',
-       // 'Content-Type': 'application/json',
-      };
-
-      var response = await client.post(url, headers: _headers);
-      if (response.statusCode == 201) {
-        return response.body;
+      final uri = Uri.http('api.weatherapi.com', '/v1/current.json', queryParameters);
+      print(uri);
+      final response = await http.get(uri);
+      if(response.statusCode == 200) {
+        return WeatherNow.fromJson(jsonDecode(response.body));
       } else {
-        //throw exception and catch it in UI
+        throw Exception("Can not get weather");
       }
+    } catch(e) {
+      rethrow;
     }
-
-    Future<dynamic> put(String api) async{}
-
-    Future<dynamic> delete(String api) async{}
-
   }
+
+  Future<WeatherFuture> getFutureWeatherData(String cityName, String hourNum) async {
+    try {
+      final queryParameters = {
+        'key': '6b2ee4deca3e45e98fe123623241004',
+        'q': cityName,
+        'days': '1',
+        'hour': hourNum,
+      };
+      final uri = Uri.http('api.weatherapi.com', '/v1/forecast.json', queryParameters);
+      final response = await http.get(uri);
+      if(response.statusCode == 200) {
+        return WeatherFuture.fromJson(jsonDecode(response.body));
+      } else {
+        throw Exception("Can not get weather");
+      }
+    } catch(e) {
+      rethrow;
+    }
+  }
+
+
+}
