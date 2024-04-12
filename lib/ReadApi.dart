@@ -1,4 +1,6 @@
 //This class reads the api based on a thing to look for and the hour
+//may be replaced with the apicallerweather class because thats more developed
+//either change calling class to suit that class, or use this one to call from that one
 class ReadApi {
 
   int getTime() {
