@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testingwindows/pages/home.dart';
+import 'package:testingwindows/pages/mainscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false ,
       theme: ThemeData(fontFamily: 'TimesNewRoman'),
-      home: const HomePage(),
-
+      home: const MainScreen(), //use MainScreen to see API call functioning,
+      // use const HomePage() to see what we have for the home page so far,
+      //We will make these into one home page later.
 
     );
   }
