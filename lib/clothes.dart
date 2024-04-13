@@ -1,5 +1,6 @@
 //clothes
 import 'dart:math';
+import 'package:testingwindows/WeatherConditions.dart';
 
 class Clothes {
 
@@ -10,7 +11,7 @@ class Clothes {
   late String weatherType;
 
   Clothes(WeatherConditions weatherCondition) {
-    temp = weatherCondition.getTemp();
+    temp = weatherCondition.getTempF();
     windspeed = weatherCondition.getWind();
     humiditylevel = weatherCondition.getHumid();
     weatherType = weatherCondition.getType();
@@ -20,6 +21,13 @@ class Clothes {
     if (feelsLikeTemp > temp) {
       feelsLikeTemp = temp;
     }
+  }
+
+  Clothes.forQuiz(double temperature, double speed, double humid, String condition) {
+    feelsLikeTemp = temperature;
+    windspeed = speed;
+    humiditylevel = humid;
+    weatherType = condition;
   }
 
    List<String> clothingChoice() {
