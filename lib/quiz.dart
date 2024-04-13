@@ -1,8 +1,11 @@
 //quiz
+//This class is unfinished
 import 'dart:math';
+import 'clothes.dart';
+
 
 class Quiz {
-  WeatherConditions fakeWeather = new WeatherConditions();
+  //WeatherConditions fakeWeather = new WeatherConditions();
   List<String>clothe = [];
 
     quiz(){
@@ -22,17 +25,19 @@ class Quiz {
     }else{
         weather2 = 'rainy';
     }
-
-    fakeWeather = [temp2, wind2, humid2, weather2];
-    clothe = Clothes(fakeWeather);
+    Clothes fakeClothes = new Clothes.forQuiz(temp2, wind2, humid2, weather2);
+    //fakeWeather = [temp2, wind2, humid2, weather2];
+    clothe = fakeClothes.clothingChoice();
     }
 
-    WeatherConditions ask(){
+    /*WeatherConditions ask(){
         return fakeWeather;
-    }
+    }*/
+
     List<String> fakeWhatToWear(){
         return clothe;
     }
+
     bool correct(String cloth){
         if(clothe.contains(cloth)){
             return true;

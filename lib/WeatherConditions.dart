@@ -1,47 +1,58 @@
+import 'weather.dart';
+import 'apicallerweather.dart';
+
 class WeatherConditions {
 
-  late int temp;
-  late int wind;
-  late int humi;
+  late double tempF;
+  late double wind;
+  late double humi;
   late String type;
+  WeatherService weatherService = WeatherService();
+  WeatherNow weather = WeatherNow();
 
-  WeatherConditions(int temp, int wind, int humi, String type){//make it so that this information can be pulled straight from the api in the day weather class.
-    this.temp = temp;
-    this.wind = wind;
-    this.humi = humi;
-    this.type = type;
-  }
-   /*WeatherConditions(){//make it so that this information can be pulled straight from the api in the day weather class.
-    temp = 0;
-    wind = 0;
-    humi = 0;
-    type = '';
-  }*/
-
-  int getTemp() {
-    return temp;
+  WeatherConditions(){
+    this.tempF = 60;
+    this.wind = 0;
+    this.humi = 0;
+    this.type = 'Sunny';
   }
 
-  int getWind() {
+  void getWeather(String city) async {
+    weather = await weatherService.getCurrentWeatherData(city);
+
+      type = weather.condition;
+      tempF = weather.tempF;
+      wind = weather.windSpeed;
+
+    print(weather.tempF);
+    print(weather.condition);
+    print(weather.windSpeed);
+  }
+
+  double getTempF(){
+    return tempF;
+  }
+
+  double getWind() {
     return wind;
   }
 
-  int getHumid() {
+  double getHumid() {
     return humi;
   }
 
   String getType() {
     return type;
   }
-  void setTemp(int tem) {
-    temp = tem;
+  void setTemp(double tem) {
+    tempF = tem;
   }
 
-  void setWind(int win) {
+  void setWind(double win) {
     wind = win;
   }
 
-  void setHumid(int hum) {
+  void setHumid(double hum) {
     humi = hum;
   }
 
@@ -50,7 +61,7 @@ class WeatherConditions {
   }
 
   void clear(){
-    temp = 0;
+    tempF = 0;
     wind = 0;
     humi = 0;
     type = '';

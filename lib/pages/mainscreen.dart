@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'apicallerweather.dart';
+import '../apicallerweather.dart';
+import '../weather.dart';
 
-import 'weather.dart';
 
 /*
 The code for this section was learned from the tutorial How to Get API with
@@ -20,18 +20,18 @@ class _MainScreenState extends State<MainScreen> {
   WeatherService weatherService = WeatherService();
   WeatherNow weather = WeatherNow();
 
+
   String currentWeather = "";
-  double tempC = 0;
   double tempF = 0;
 
   @override
   void initState() {
     super.initState();
-    getWeather();
+    getWeather('Boston');
   }
 
-  void getWeather() async {
-    weather = await weatherService.getCurrentWeatherData("Canada");
+  void getWeather(String city) async {
+    weather = await weatherService.getCurrentWeatherData(city);
 
     setState(() {
       currentWeather = weather.condition;
@@ -39,6 +39,14 @@ class _MainScreenState extends State<MainScreen> {
     });
     print(weather.tempF);
     print(weather.condition);
+  }
+
+  double getTempF(){
+    return(tempF);
+  }
+
+  String getCurrentWeather(){
+    return(currentWeather);
   }
 
   @override
@@ -49,7 +57,6 @@ class _MainScreenState extends State<MainScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(currentWeather),
-            Text(tempC.toString()),
             Text(tempF.toString()),
           ],
         ),

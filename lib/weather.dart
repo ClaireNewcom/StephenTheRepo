@@ -24,5 +24,17 @@ class WeatherNow{
     windSpeed: json['current']['wind_mph']);
   }
 
+  /*double getTempF(){
+    return tempF;
+  }
+
+  String getCondition(){
+    return condition;
+  }
+
+  double getWindSpeed(){
+    return windSpeed;
+  }*/
+
 
 }
