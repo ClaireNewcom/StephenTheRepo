@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import '../apicallerweather.dart';
-import '../WWTW.dart';
 import '../weather.dart';
-import 'package:testingwindows/WeatherConditions.dart';
+
 
 /*
 The code for this section was learned from the tutorial How to Get API with

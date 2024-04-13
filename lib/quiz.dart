@@ -2,7 +2,7 @@
 //This class is unfinished
 import 'dart:math';
 import 'clothes.dart';
-import 'package:testingwindows/WeatherConditions.dart';
+
 
 class Quiz {
   //WeatherConditions fakeWeather = new WeatherConditions();
