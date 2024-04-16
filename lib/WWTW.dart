@@ -35,9 +35,18 @@ class WWTW {
 		List<String> chosenClothes = [];
 
 		for (int r = 0; r < WWTWear.length; r++) {
-			if (WWTWear[r].getCounter() > 3){
+			if (WWTWear[r].getCounter() > 1){
 				chosenClothes.add(WWTWear[r].getClothes());
 			}
+		}
+    if (WWTWear[r].getClothes().contains('umbrella')&&!chosenClothes.contains('umbrella')){
+			chosenClothes.add('umbrella');
+		}
+    if (WWTWear[r].getClothes().contains('raincoat')&&!chosenClothes.contains('raincoat')){
+			chosenClothes.add('raincoat');
+		}
+    if (WWTWear[r].getClothes().contains('windbreaker coat')&&!chosenClothes.contains('windbreaker coat')){
+			chosenClothes.add('windbreaker coat');
 		}
 		return chosenClothes;
 
