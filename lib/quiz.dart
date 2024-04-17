@@ -8,7 +8,7 @@ class Quiz {
   //WeatherConditions fakeWeather = new WeatherConditions();
   List<String>clothe = [];
 
-    quiz(){
+  quiz(){
     Random randy = new Random();
     double temp2 = (randy.nextInt(110)-10).toDouble();
     double wind2 = (randy.nextInt(80)).toDouble();
@@ -17,32 +17,32 @@ class Quiz {
     String weather2 = '';
 
     if(weatherNum==0){
-        weather2 = 'sunny';
+      weather2 = 'sunny';
     }else if(weatherNum==1){
-        weather2 = 'cloudy';
+      weather2 = 'cloudy';
     }else if(weatherNum==2){
-        weather2 = 'hail';
+      weather2 = 'hail';
     }else{
-        weather2 = 'rainy';
+      weather2 = 'rainy';
     }
     Clothes fakeClothes = new Clothes.forQuiz(temp2, wind2, humid2, weather2);
     //fakeWeather = [temp2, wind2, humid2, weather2];
     clothe = fakeClothes.clothingChoice();
-    }
+  }
 
-    /*WeatherConditions ask(){
-        return fakeWeather;
-    }*/
+  /*WeatherConditions ask(){
+    return fakeWeather;
+  }*/
 
-    List<String> fakeWhatToWear(){
-        return clothe;
-    }
+  List<String> fakeWhatToWear(){
+    return clothe;
+  }
 
-    bool correct(String cloth){
-        if(clothe.contains(cloth)){
-            return true;
-        }else{
-            return false;
-        }
+  bool correct(String cloth){
+    if(clothe.contains(cloth)){
+      return true;
+    }else{
+      return false;
     }
+  }
 }

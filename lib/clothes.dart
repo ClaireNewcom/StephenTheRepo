@@ -30,7 +30,7 @@ class Clothes {
     weatherType = condition;
   }
 
-   List<String> clothingChoice() {
+  List<String> clothingChoice() {
     List<String> clothing = [];
 
     if (feelsLikeTemp > 90) {
