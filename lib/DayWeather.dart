@@ -3,6 +3,7 @@
 import 'WeatherConditions.dart';
 
 
+
 class DayWeather {
   //this class reads from the api, find the different aspects of the weiather, puts the information into a WeatherConditions type, and puts them in a list
   int h = 0;
