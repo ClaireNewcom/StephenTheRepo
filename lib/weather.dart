@@ -9,11 +9,13 @@ class WeatherNow{
   final double tempF;
   final String condition;
   final double windSpeed;
+  final double precipitation;
 
   const WeatherNow ({
     this.tempF = 0,
     this.condition = '',
     this.windSpeed = 0,
+    this.precipitation = 0,
     //can add more
   });
 
@@ -21,7 +23,8 @@ class WeatherNow{
     return WeatherNow(
     tempF: json['current']['temp_f'],
     condition: json['current']['condition']['text'],
-    windSpeed: json['current']['wind_mph']);
+    windSpeed: json['current']['wind_mph'],
+    precipitation: json['current']['precip_in']);
   }
 
   /*double getTempF(){
