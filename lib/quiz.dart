@@ -9,7 +9,7 @@ class Quiz {
   List<String>clothe = [];
 
   quiz(){
-    Random randy = new Random();
+    Random randy = Random();
     double temp2 = (randy.nextInt(110)-10).toDouble();
     double wind2 = (randy.nextInt(80)).toDouble();
     double humid2 = (randy.nextInt(100)).toDouble();
@@ -25,7 +25,7 @@ class Quiz {
     }else{
       weather2 = 'rainy';
     }
-    Clothes fakeClothes = new Clothes.forQuiz(temp2, wind2, humid2, weather2);
+    Clothes fakeClothes = Clothes.forQuiz(temp2, wind2, humid2, weather2);
     //fakeWeather = [temp2, wind2, humid2, weather2];
     clothe = fakeClothes.clothingChoice();
   }

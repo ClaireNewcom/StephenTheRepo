@@ -9,27 +9,30 @@ class WeatherFuture{
   final double tempF;
   final String condition;
   final double windSpeed;
+  final double precipitation;
 
   const WeatherFuture ({
     this.tempF = 0,
     this.condition = '',
     this.windSpeed = 0,
+    this.precipitation = 0,
     //can add more
   });
 
   factory WeatherFuture.fromJson(Map<String, dynamic> json){
     return WeatherFuture(
-        tempF: json['forecast']['forecastday']['hour'][0]['temp_f'],
-        condition: json['forecast']['forecastday']['hour'][0]['condition'][0]['text'],
-        windSpeed: json['current']['wind_mph']);
+        tempF: json['forecast']['forecastday']['hour']['temp_f'],
+        condition: json['forecast']['forecastday']['hour']['condition'][0]['text'],
+        windSpeed: json['forecast']['forecastday']['hour']['wind_mph'],
+        precipitation: json['forecast']['forecastday']['hour']['precip_in']);
   } //we will need to modify for different hours I think, figure out how to do that
 
-  Future<double> getTemp() async {
+  /*Future<double> getTemp() async {
     return tempF;
   }
 
   Future<String> getCondition() async {
     return condition;
-  }
+  }*/
 
 }
