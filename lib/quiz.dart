@@ -5,10 +5,10 @@ import 'clothes.dart';
 
 
 class Quiz {
-  //WeatherConditions fakeWeather = new WeatherConditions();
+  /*//WeatherConditions fakeWeather = new WeatherConditions();
   List<String>clothe = [];
 
-  quiz(){
+  quiz() async {
     Random randy = Random();
     double temp2 = (randy.nextInt(110)-10).toDouble();
     double wind2 = (randy.nextInt(80)).toDouble();
@@ -25,9 +25,9 @@ class Quiz {
     }else{
       weather2 = 'rainy';
     }
-    Clothes fakeClothes = Clothes.forQuiz(temp2, wind2, humid2, weather2);
+    Clothes fakeClothes = Clothes.forQuiz(temp2, weather2);
     //fakeWeather = [temp2, wind2, humid2, weather2];
-    clothe = fakeClothes.clothingChoice();
+    clothe = await fakeClothes.clothingChoice();
   }
 
   /*WeatherConditions ask(){
@@ -44,5 +44,5 @@ class Quiz {
     }else{
       return false;
     }
-  }
+  }*/
 }

@@ -4,20 +4,23 @@ import 'apicallerweather.dart';
 class WeatherConditions {
 
   late double tempF;
-  late double wind;
-  late double humi;
+  //late double wind;
+  //late double humi;
   late String type;
-  WeatherService weatherService = WeatherService();
-  WeatherNow weather = WeatherNow();
+  //WeatherService weatherService = WeatherService();
+  //WeatherNow weather = WeatherNow();
 
-  WeatherConditions(){
-    this.tempF = 60;
-    this.wind = 0;
-    this.humi = 0;
-    this.type = 'Sunny';
+
+  //USE THIS CLASS WEATHER CONDITIONS TO STORE TEMP AND TYPE. WILL CALL THIS IN
+  //THE USER INTERFACE AND THEN PASS THIS TO THE CLOTHING CLASS
+  WeatherConditions(double tempIn, String typeIn){
+    tempF = tempIn;
+    //this.wind = 0;
+    //this.humi = 0;
+    type = typeIn;
   }
 
-  void getWeather(String city) async {
+  /*void getWeather(String city) async {
     weather = await weatherService.getCurrentWeatherData(city);
 
       type = weather.condition;
@@ -27,18 +30,10 @@ class WeatherConditions {
     print(weather.tempF);
     print(weather.condition);
     print(weather.windSpeed);
-  }
+  }*/
 
   double getTempF(){
     return tempF;
-  }
-
-  double getWind() {
-    return wind;
-  }
-
-  double getHumid() {
-    return humi;
   }
 
   String getType() {
@@ -48,22 +43,12 @@ class WeatherConditions {
     tempF = tem;
   }
 
-  void setWind(double win) {
-    wind = win;
-  }
-
-  void setHumid(double hum) {
-    humi = hum;
-  }
-
   void setType(String typ) {
     type = typ;
   }
 
   void clear(){
     tempF = 0;
-    wind = 0;
-    humi = 0;
     type = '';
   }
 }
