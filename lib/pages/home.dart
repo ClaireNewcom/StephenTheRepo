@@ -4,18 +4,11 @@ import 'package:flutter/rendering.dart';
 import 'package:testingwindows/weather.dart';
 import 'package:testingwindows/apicallerweather.dart';
 
+/*
+  class _HomePage extends State<HomePage> {
+    WeatherService weatherService = WeatherService();
+    WeatherNow weather = WeatherNow();
 
-
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  /*
-  @override
-  State<HomePage> createState() => _HomePageState();
-
-   WeatherService weatherService = WeatherService();
-   WeatherNow weather = WeatherNow();
 
    String currentWeather = "";
    double tempF = 0;
@@ -44,7 +37,7 @@ class HomePage extends StatelessWidget {
    String getCurrentWeather(){
      return(currentWeather);
    }
-*/
+
 
   @override
 
@@ -115,5 +108,5 @@ class HomePage extends StatelessWidget {
 
 
 }
-
+*/
 

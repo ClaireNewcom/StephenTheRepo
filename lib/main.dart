@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
       // use const HomePage() to see what we have for the home page so far,
       //We will make these into one home page later
       routes: {
-        '/second' : (context) => const
-      wearUI(),
+        '/Home' : (context) => const
+      MainScreen(),
+        '/What Should I wear?' : (context) => const
+            wearUI()
       }
     );
   }
