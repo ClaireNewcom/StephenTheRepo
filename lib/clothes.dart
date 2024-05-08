@@ -1,39 +1,40 @@
 //clothes
-import 'dart:math';
+//import 'dart:math';
 import 'package:testingwindows/WeatherConditions.dart';
 
 class Clothes {
 
   late double temp;
-  late double feelsLikeTemp;
-  late double windspeed;
-  late double humiditylevel;
+  //late double feelsLikeTemp;
+  //late double windspeed;
+ // late double humiditylevel;
   late String weatherType;
 
   Clothes(WeatherConditions weatherCondition) {
     temp = weatherCondition.getTempF();
-    windspeed = weatherCondition.getWind();
-    humiditylevel = weatherCondition.getHumid();
+    //windspeed = weatherCondition.getWind();
+    //humiditylevel = weatherCondition.getHumid();
     weatherType = weatherCondition.getType();
 
-    feelsLikeTemp = 35.74 + 0.6215 * temp - 35.75 * pow(windspeed, 0.16) +
+   /* feelsLikeTemp = 35.74 + 0.6215 * temp - 35.75 * pow(windspeed, 0.16) +
         0.4275 * temp * pow(windspeed, 0.16);
     if (feelsLikeTemp > temp) {
       feelsLikeTemp = temp;
-    }
+    }*/
   }
 
-  Clothes.forQuiz(double temperature, double speed, double humid, String condition) {
-    feelsLikeTemp = temperature;
-    windspeed = speed;
-    humiditylevel = humid;
+  Clothes.forQuiz(double temperature, String condition) {
+    temp = temperature;
+    //feelsLikeTemp = temperature;
+    //windspeed = speed;
+    //humiditylevel = humid;
     weatherType = condition;
   }
 
-  List<String> clothingChoice() {
+  Future<List<String>> clothingChoice() async {
     List<String> clothing = [];
 
-    if (feelsLikeTemp > 90) {
+    if (temp > 90) {
       //print("Warning: it is too hot to stay outside for very long. We recommend staying inside with an air conditioner or fan.");
       clothing.add('shorts');
       clothing.add('t-shirt');
@@ -52,7 +53,7 @@ class Clothes {
       }
     }
 
-    else if (feelsLikeTemp < 10) {
+    else if (temp < 10) {
       //print("Warning: it is too cold to stay outside for very long. We recommend staying inside with a heater and wearing many layers.");
       clothing.add("pants");
       clothing.add("long sleeved shirt");
@@ -65,7 +66,7 @@ class Clothes {
       clothing.add("gloves");
     }
 
-    else if (feelsLikeTemp < 30) {
+    else if (temp < 30) {
       clothing.add("pants");
       clothing.add("long sleeved shirt");
       clothing.add("sweatshirt/sweater");
@@ -77,7 +78,7 @@ class Clothes {
       clothing.add("gloves");
     }
 
-    else if (feelsLikeTemp < 40) {
+    else if (temp < 40) {
       clothing.add("pants");
       clothing.add("t-shirt");
       clothing.add("socks");
@@ -94,7 +95,7 @@ class Clothes {
       }
     }
 
-    else if (feelsLikeTemp < 60 /*because 50 and 60 are similar*/) {
+    else if (temp < 60 /*because 50 and 60 are similar*/) {
       clothing.add("pants");
       clothing.add("t-shirt");
       clothing.add("socks");
@@ -114,7 +115,7 @@ class Clothes {
       }
     }
 
-    else if (feelsLikeTemp < 70) {
+    else if (temp < 70) {
       clothing.add("shorts");
       clothing.add("t-shirt");
       clothing.add("socks");
@@ -137,7 +138,7 @@ class Clothes {
       }
     }
 
-    else if (feelsLikeTemp < 90) {
+    else if (temp < 90) {
       clothing.add("shorts");
       clothing.add("t-shirt");
       clothing.add("socks");

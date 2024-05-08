@@ -19,7 +19,7 @@ class WeatherService {
         'q': cityName,
       };
       final uri = Uri.http('api.weatherapi.com', '/v1/current.json', queryParameters);
-      print(uri);
+      //print(uri);
       final response = await http.get(uri);
       if(response.statusCode == 200) {
         return WeatherNow.fromJson(jsonDecode(response.body));
@@ -32,7 +32,7 @@ class WeatherService {
   }
 
   Future<WeatherFuture> getFutureWeatherData(String cityName, int hourNum) async {
-    String hourReal = '';
+    String hourReal = "";
     /*this if statement might not be needed, if so delete the if statement, the
     brackets, and the else statement at the end. The stuff inside will be needed
     to get the future weather for the next few hours. If the user opens the app
@@ -41,9 +41,9 @@ class WeatherService {
     there are 6 hours left in a day, then the algorithm will count the weather
     from the 4th hour twice and ignore the 8th hour prediction.
      */
-    if (hourNum == 4 || hourNum == 8) {
+    if (hourNum == 4 || hourNum == 8 || hourNum == 0) {
       var now = DateTime.now();
-      var hour = now.hour;
+      int hour = now.hour;
       hourReal = (hour + hourNum).toString(); //not done
 
       try {
@@ -55,6 +55,8 @@ class WeatherService {
         };
         final uri = Uri.http(
             'api.weatherapi.com', '/v1/forecast.json', queryParameters);
+       //print("hi! ");
+       //print(uri); //link works
         final response = await http.get(uri);
         if (response.statusCode == 200) {
           return WeatherFuture.fromJson(jsonDecode(response.body));

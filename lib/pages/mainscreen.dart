@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-    getWeather('Boston');
+    getWeather('Worcester');
   }
 
   void getWeather(String city) async {

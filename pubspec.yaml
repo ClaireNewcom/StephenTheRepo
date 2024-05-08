@@ -75,6 +75,30 @@ flutter:
      - assets/icons/windy.jpg
      - assets/icons/ThermometerHighTemp.png
      - assets/icons/ThermometerLowTemp.png
+     - assets/icons/FlipFlops.png
+     - assets/icons/HatGloves.png
+     - assets/icons/layerUp.png
+     - assets/icons/Longsleeve.png
+     - assets/icons/Mitten.png
+     - assets/icons/Pants.png
+     - assets/icons/Puffer.png
+     - assets/icons/RainBoots.png
+     - assets/icons/Rainjacket.png
+     - assets/icons/Sandals.png
+     - assets/icons/Scarf.png
+     - assets/icons/shorts.png
+     - assets/icons/Sneaker.png
+     - assets/icons/SnowBoots.png
+     - assets/icons/Socks.png
+     - assets/icons/SunglassesLotion.png
+     - assets/icons/Sunscreen.png
+     - assets/icons/Sweater.png
+     - assets/icons/Sweatshirt.png
+     - assets/icons/ThickSocks.png
+     - assets/icons/tShirt.png
+     - assets/icons/Umbrella.png
+     - assets/icons/Windbreaker.png
+     - assets/icons/WinterHat.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -93,6 +117,11 @@ flutter:
        fonts:
         - asset: fonts/TimesNewRoman.ttf
           weight: 400
+     - family: NotoSans
+       fonts:
+           - asset: fonts/NotoSans-Regular.ttf
+          # - asset: fonts/NotoSans-Bold.ttf
+       #      weight: 700
        # - asset: fonts/TimesNewRoman-Bold.ttf
         #  weight: 700
       #  - asset: fonts/TimesNewRoman-SemiBold.ttf
