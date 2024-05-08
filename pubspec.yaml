@@ -64,6 +64,17 @@ flutter:
   #uses-material-design: true
   assets:
      - assets/icons/home2.jpg
+     - assets/icons/sun2.png
+     - assets/icons/partlyCloudy.png
+     - assets/icons/cloud.jpg
+     - assets/icons/sleet.png
+     - assets/icons/thunder.png
+     - assets/icons/rain.png
+     - assets/icons/hail.png
+     - assets/icons/snow.png
+     - assets/icons/windy.jpg
+     - assets/icons/ThermometerHighTemp.png
+     - assets/icons/ThermometerLowTemp.png
      - assets/icons/FlipFlops.png
      - assets/icons/HatGloves.png
      - assets/icons/layerUp.png
