@@ -28,10 +28,10 @@ class _wearUIState extends State<wearUI> {
 
   String currentWeather = "";
   double currentTempF = 0;
-  String futureWeather1 = "";
-  double futureTemp1 = 0;
-  String futureWeather2 = "";
-  double futureTemp2 = 0;
+  //String futureWeather1 = "";
+  //double futureTemp1 = 0;
+  //String futureWeather2 = "";
+  //double futureTemp2 = 0;
   String city = "Worcester"; //will have to get the city from the user and will store that as a const variable or smth
   List<WeatherConditions> conditionsForClothes = [];
   List<String> theStringOfChosenOnes = [];
@@ -39,39 +39,6 @@ class _wearUIState extends State<wearUI> {
   late final ScrollController _scrollController;
 
   bool isScrolling = false;
-
-  //learned and modified from https://api.flutter.dev/flutter/widgets/ScrollController-class.html#:~:text=ScrollController%20class%20Controls%20a%20scrollable%20widget.%20Scroll%20controllers,State%20objects%20and%20are%20reused%20in%20each%20State.build.
-  /*void _handleScrollChange() {
-    if (isScrolling != _scrollController.position.isScrollingNotifier.value) {
-      setState(() {
-        isScrolling = _scrollController.position.isScrollingNotifier.value;
-      });
-    }
-  }
-
-  //learned and modified from https://api.flutter.dev/flutter/widgets/ScrollController-class.html#:~:text=ScrollController%20class%20Controls%20a%20scrollable%20widget.%20Scroll%20controllers,State%20objects%20and%20are%20reused%20in%20each%20State.build.
-  void _handlePositionAttach(ScrollPosition position) {
-    _scrollController.addListener(() {
-      if (_scrollController.position.userScrollDirection == ScrollDirection.forward) {
-        setState(() {
-          moveListUpBy1();
-        });
-      } else if (_scrollController.position.userScrollDirection == ScrollDirection.reverse) {
-        setState(() {
-          moveListDownBy1();
-        });
-      }
-    });
-  }
-
-  //learned and modified from https://api.flutter.dev/flutter/widgets/ScrollController-class.html#:~:text=ScrollController%20class%20Controls%20a%20scrollable%20widget.%20Scroll%20controllers,State%20objects%20and%20are%20reused%20in%20each%20State.build.
-  /*void _handlePositionDetach(ScrollPosition position) {
-    // From here, add a listener to the given ScrollPosition.
-    // Here the isScrollingNotifier will be used to inform when scrolling starts
-    // and stops and change the AppBar's color in response.
-    position.isScrollingNotifier.removeListener(_handleScrollChange);
-  }*/*/
-
 
   @override
   void initState() {
@@ -81,24 +48,6 @@ class _wearUIState extends State<wearUI> {
 
   }
 
-
-
-  /*void moveListUpBy1() {
-    final double itemHeight = window.innerHeight as double; // Calculate the height of one list item
-    final double newPosition = _scrollController.offset - itemHeight;
-    //_scrollController.jumpTo(newPosition);
-    Future.delayed(const Duration(milliseconds: 500), () {
-      _scrollController.jumpTo(newPosition);
-    });
-  }
-
-  void moveListDownBy1() {
-    final double itemHeight = window.innerHeight as double; // Calculate the height of one list item
-    final double newPosition = _scrollController.offset + itemHeight;
-    Future.delayed(const Duration(milliseconds: 500), () {
-      _scrollController.jumpTo(newPosition);
-    });
-  }*/
 
   void getWeather(String city) async {
     var now = DateTime.now();
@@ -151,6 +100,70 @@ class _wearUIState extends State<wearUI> {
       print(theStringOfChosenOnes[i]);
     }
   }
+
+  String _imgLink (String input){
+    String link = "";
+    switch(input){
+      case "shorts":{
+        link = "assets/icons/shorts.png";}
+        break;
+      case "t-shirt": {
+        link = "assets/icons/tShirt.png";
+      } break;
+      case "socks": {
+        link = "assets/icons/Socks.png";
+      } break;
+      case "sneakers or closed toed shoes": {
+        link = "assets/icons/Sneaker.png";
+      } break;
+      case "windbreaker coat": {
+        link = "assets/icons/Windbreaker.png";
+      } break;
+      case "raincoat": {
+        link = "assets/icons/RainJacket.png";
+      } break;
+      case "umbrella": {
+        link = "assets/icons/Umbrella.png";
+      } break;
+      case "sunscreen": {
+        link = "assets/icons/Sunscreen.png";
+      } break;
+      case "pants": {
+        link = "assets/icons/pants2.png";
+      } break;
+      case "long sleeved shirt": {
+        link = "assets/icons/Longsleeve.png";
+      } break;
+      case "sweatshirt/sweater": {
+        link = "assets/icons/Sweater.png";
+      } break;
+      case "thick socks": {
+        link = "assets/icons/ThickSocks.png";
+      } break;
+      case "winter coat with hood": {
+        link = "assets/icons/Puffer.png";
+      } break;
+      case "winter boots": {
+        link = "assets/icons/SnowBoots.png";
+      } break;
+      case "hat": {
+        link = "assets/icons/WinterHat.png";
+      } break;
+      case "scarf": {
+        link = "assets/icons/Scarf.png";
+      } break;
+      case "mittens": {
+        link = "assets/icons/Mitten.png";
+      } break;
+      case "light coat": {
+        link = "assets/icons/Sweatshirt.png";
+      } break;
+      case "sandals": {
+        link = "assets/icons/Sandals.png";
+      } break;
+    }
+    return link;
+  }
   /*
   Implementation for _buildList was learned and modified from
   https://www.woolha.com/tutorials/flutter-customscrollview-with-slivers-examples
@@ -168,9 +181,9 @@ class _wearUIState extends State<wearUI> {
           child: Column(
             children: [
               Image.asset(
-              'assets/icons/FlipFlops.png',
-              width: 20,
-              height: 20,
+              _imgLink(input[f]),
+              width: 500,
+              //height: 500,
             ),
 
               Text(

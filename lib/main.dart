@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false ,
-      theme: ThemeData(fontFamily: 'TimesNewRoman'),
+      theme: ThemeData(fontFamily: 'TimesNewRoman', scaffoldBackgroundColor: const Color(0xFFF0EBFF)),
       home: const MainScreen(), //use MainScreen to see API call functioning,
       // use const HomePage() to see what we have for the home page so far,
       //We will make these into one home page later

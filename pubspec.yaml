@@ -67,6 +67,7 @@ flutter:
      - assets/icons/sun2.png
      - assets/icons/partlyCloudy.png
      - assets/icons/cloud.jpg
+     - assets/icons/cloudy.png
      - assets/icons/sleet.png
      - assets/icons/thunder.png
      - assets/icons/rain.png
@@ -81,6 +82,8 @@ flutter:
      - assets/icons/Longsleeve.png
      - assets/icons/Mitten.png
      - assets/icons/Pants.png
+     - assets/icons/pants2.png
+     - assets/icons/pants2-removebg-preview.png
      - assets/icons/Puffer.png
      - assets/icons/RainBoots.png
      - assets/icons/Rainjacket.png

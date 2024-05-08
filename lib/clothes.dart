@@ -59,11 +59,11 @@ class Clothes {
       clothing.add("long sleeved shirt");
       clothing.add("sweatshirt/sweater");
       clothing.add("thick socks");
-      clothing.add("winter coat");
+      clothing.add("winter coat with hood");
       clothing.add("winter boots");
       clothing.add("hat");
       clothing.add("scarf");
-      clothing.add("gloves");
+      clothing.add("mittens");
     }
 
     else if (temp < 30) {
@@ -71,11 +71,11 @@ class Clothes {
       clothing.add("long sleeved shirt");
       clothing.add("sweatshirt/sweater");
       clothing.add("thick socks");
-      clothing.add("winter coat");
+      clothing.add("winter coat with hood");
       clothing.add("winter boots");
       clothing.add("hat");
       clothing.add("scarf");
-      clothing.add("gloves");
+      clothing.add("mittens");
     }
 
     else if (temp < 40) {
@@ -121,11 +121,11 @@ class Clothes {
       clothing.add("socks");
       clothing.add("sneakers or closed toed shoes");
 
-      if (weatherType.compareTo("hail") == 0) {
+      if (weatherType.contains("hail")) {
         clothing.add("windbreaker coat");
       }
       else if (weatherType.compareTo("windy") == 0) {
-        clothing.add("sweatshirt");
+        clothing.add("sweatshirt/sweater");
         clothing.add("sunscreen");
       }
 
