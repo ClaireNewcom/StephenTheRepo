@@ -56,8 +56,7 @@ class _MainScreenState extends State<MainScreen> {
         currentWeather == 'Clear') {
       loadImage = 'assets/icons/sun2.png';
     }
-    else
-    if (currentWeather == 'partly Cloudy' || currentWeather.contains('fog') ||
+    else if (currentWeather == 'partly Cloudy' || currentWeather.contains('fog') ||
         currentWeather.contains('Mist')) // Check for sun condition
         {
       loadImage = "assets/icons/partlyCloudy.png";

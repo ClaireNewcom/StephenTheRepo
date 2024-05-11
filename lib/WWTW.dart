@@ -61,13 +61,13 @@ class WWTW {
 			if (WWTWear[r].getCounter() > 1){
 				chosenClothes.add(WWTWear[r].getClothes());
 			}
-      if (WWTWear[r].getClothes().compareTo('umbrella') == 0 && chosenClothes.contains('umbrella')){
+      if (WWTWear[r].getClothes().contains('umbrella') && !chosenClothes.contains('umbrella')){
 			chosenClothes.add('umbrella');
 		  }
-      if (WWTWear[r].getClothes().compareTo('raincoat') == 0 && !chosenClothes.contains('raincoat')){
+      if (WWTWear[r].getClothes().contains('raincoat') && !chosenClothes.contains('raincoat')){
 			chosenClothes.add('raincoat');
 		  }
-      if (WWTWear[r].getClothes().compareTo('windbreaker coat') == 0 && !chosenClothes.contains('windbreaker coat')){
+      if (WWTWear[r].getClothes().contains('windbreaker coat') && !chosenClothes.contains('windbreaker coat')){
 			chosenClothes.add('windbreaker coat');
 		  }
 		}

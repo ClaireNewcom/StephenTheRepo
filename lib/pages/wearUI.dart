@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -175,7 +175,7 @@ class _wearUIState extends State<wearUI> {
       listItems.add(Padding(padding: const EdgeInsets.only(left: 20.0, top: 0.0, right: 20.0, bottom: 20.0),
         child: Container(
             width: double.infinity,
-            height: window.innerHeight?.toDouble(),
+            height: MediaQuery.of(context).size.height,
             alignment: Alignment.center,
           //height: 100, width: 100,
           child: Column(
