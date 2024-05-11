@@ -5,29 +5,18 @@ import 'package:testingwindows/WeatherConditions.dart';
 class Clothes {
 
   late double temp;
-  //late double feelsLikeTemp;
-  //late double windspeed;
- // late double humiditylevel;
   late String weatherType;
 
   Clothes(WeatherConditions weatherCondition) {
     temp = weatherCondition.getTempF();
-    //windspeed = weatherCondition.getWind();
-    //humiditylevel = weatherCondition.getHumid();
+
     weatherType = weatherCondition.getType();
 
-   /* feelsLikeTemp = 35.74 + 0.6215 * temp - 35.75 * pow(windspeed, 0.16) +
-        0.4275 * temp * pow(windspeed, 0.16);
-    if (feelsLikeTemp > temp) {
-      feelsLikeTemp = temp;
-    }*/
+
   }
 
   Clothes.forQuiz(double temperature, String condition) {
     temp = temperature;
-    //feelsLikeTemp = temperature;
-    //windspeed = speed;
-    //humiditylevel = humid;
     weatherType = condition;
   }
 
@@ -41,10 +30,11 @@ class Clothes {
       clothing.add('socks');
       clothing.add('sneakers or closed toed shoes');
 
-      if (weatherType.compareTo('hail') == 0) {
+      if (weatherType.contains('hail') || weatherType.contains("sleet")) {
         clothing.add('windbreaker coat');
       }
-      else if (weatherType.compareTo('rainy') == 0) {
+      else if (weatherType.contains('rainy') || weatherType.contains('rain')
+          || weatherType.contains('drizzle') || weatherType.contains('Thundery')) {
         clothing.add('raincoat');
         clothing.add('umbrella');
       }
@@ -85,8 +75,9 @@ class Clothes {
       clothing.add("sweatshirt/sweater");
       clothing.add("sneakers or closed toed shoes");
 
-      if (weatherType.compareTo("windy") == 0 ||
-          weatherType.compareTo("hail") == 0) {
+      if (weatherType.contains("windy") ||
+          weatherType.contains("hail") || weatherType.contains("sleet")
+        || weatherType.contains("pellets")) {
         clothing.add("winter coat with hood");
       }
 
@@ -102,11 +93,13 @@ class Clothes {
       clothing.add("sweatshirt/sweater");
       clothing.add("sneakers or closed toed shoes");
 
-      if (weatherType.compareTo("windy") == 0 ||
-          weatherType.compareTo("hail") == 0) {
+      if (weatherType.contains("windy") ||
+          weatherType.contains("hail") || weatherType.contains("sleet")
+          || weatherType.contains("pellets")) {
         clothing.add("windbreaker coat");
       }
-      else if (weatherType.compareTo("rainy") == 0) {
+      else if (weatherType.contains('rainy') || weatherType.contains('rain')
+          || weatherType.contains('drizzle') || weatherType.contains('Thundery')) {
         clothing.add("raincoat");
         clothing.add("umbrella");
       }
@@ -121,15 +114,18 @@ class Clothes {
       clothing.add("socks");
       clothing.add("sneakers or closed toed shoes");
 
-      if (weatherType.contains("hail")) {
+      if (weatherType.contains("hail") || weatherType.contains("sleet")
+          || weatherType.contains("pellets")) {
         clothing.add("windbreaker coat");
       }
-      else if (weatherType.compareTo("windy") == 0) {
+      else if (weatherType.contains("windy") || weatherType.contains('Partly cloudy') ||
+          weatherType.contains('Cloudy') || weatherType.contains('Overcast') || weatherType.contains("Mist")) {
         clothing.add("sweatshirt/sweater");
         clothing.add("sunscreen");
       }
 
-      else if (weatherType.compareTo("rainy") == 0) {
+      else if (weatherType.contains('rainy') || weatherType.contains('rain')
+          || weatherType.contains('drizzle') || weatherType.contains('Thundery')) {
         clothing.add("raincoat");
         clothing.add("umbrella");
       }
@@ -144,11 +140,13 @@ class Clothes {
       clothing.add("socks");
       clothing.add("sandals");
 
-      if (weatherType.compareTo("hail") == 0) {
+      if (weatherType.contains("hail") || weatherType.contains("sleet")
+          || weatherType.contains("pellets")) {
         clothing.add("windbreaker coat");
         clothing.add("sneakers or closed toed shoes");
       }
-      else if (weatherType.compareTo("rainy") == 0) {
+      else if (weatherType.contains('rainy') || weatherType.contains('rain')
+          || weatherType.contains('drizzle') || weatherType.contains('Thundery')) {
         clothing.add("raincoat");
         clothing.add("umbrella");
       }
