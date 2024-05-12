@@ -5,39 +5,24 @@ Flutter! (Weather Api) made by Bytx on Youtube https://www.youtube.com/watch?v=c
 We used the api mentioned in the tutorial, and we used the code they supplied, but modified it to our needs.
  */
 
+///This class calls from the Json file from the api weather API (weatherapi.com).
 class WeatherNow{
   final double tempF;
   final String condition;
-  final double windSpeed;
-  final double precipitation;
 
+  ///Constructs an instance of the WeatherNow class with an initial value of tempF = 0, and an initial condition of an empty string.
   const WeatherNow ({
     this.tempF = 0,
     this.condition = '',
-    this.windSpeed = 0,
-    this.precipitation = 0,
-    //can add more
   });
 
+  ///Calls from the Json file from the api weather API (weatherapi.com), and sets tempF
+  /// and condition to the corresponding values in the api. Takes in a map of String [json] which is used to
+  /// call from the api.
   factory WeatherNow.fromJson(Map<String, dynamic> json){
     return WeatherNow(
     tempF: json['current']['temp_f'],
-    condition: json['current']['condition']['text'],
-    windSpeed: json['current']['wind_mph'],
-    precipitation: json['current']['precip_in']);
+    condition: json['current']['condition']['text']);
   }
-
-  /*double getTempF(){
-    return tempF;
-  }
-
-  String getCondition(){
-    return condition;
-  }
-
-  double getWindSpeed(){
-    return windSpeed;
-  }*/
-
 
 }

@@ -9,9 +9,13 @@ The code for this section was learned from the tutorial How to Get API with
 Flutter! (Weather Api) made by Bytx on Youtube https://www.youtube.com/watch?v=c9XyI8zM73k.
 We used the api mentioned in the tutorial, and we used the code they supplied.
  */
-//May be able to get rid of this first method and have everything be in the second
-//method
+
+///This class builds a link that can be used to call from the api Weather API (weatherapi.com).
+
 class WeatherService {
+
+  ///Returns a future instance of an object of the class WeatherNow of the file weather.dart. Takes in [cityName]
+  ///as a String and builds the link to the api weather API (weatherapi.com) using a key and the name of the city.
   Future<WeatherNow> getCurrentWeatherData(String cityName) async {
     try {
       final queryParameters = {
@@ -31,20 +35,17 @@ class WeatherService {
     }
   }
 
+  ///Returns a future instance of an object of the class WeatherFuture of the file weatherFuture.dart. Takes in [cityName]
+  ///as a String and [hourNum] as an int. If the hourNum is 0, 4, or 8, a link to the api
+  ///weather API (weatherapi.com) is built using a key, the input city, the hour
+  ///in the future that the weather will be found for in military time, and the day which is equal to 1.
   Future<WeatherFuture> getFutureWeatherData(String cityName, int hourNum) async {
     String hourReal = "";
-    /*this if statement might not be needed, if so delete the if statement, the
-    brackets, and the else statement at the end. The stuff inside will be needed
-    to get the future weather for the next few hours. If the user opens the app
-    with less than 8 hours in the day, or less than 4 hours in a day,then it
-    will only return the weather for the 4th hour or the current. Meaning, if
-    there are 6 hours left in a day, then the algorithm will count the weather
-    from the 4th hour twice and ignore the 8th hour prediction.
-     */
+
     if (hourNum == 4 || hourNum == 8 || hourNum == 0) {
       var now = DateTime.now();
       int hour = now.hour;
-      hourReal = (hour + hourNum).toString(); //not done
+      hourReal = (hour + hourNum).toString();
 
       try {
         final queryParameters = {
@@ -55,8 +56,6 @@ class WeatherService {
         };
         final uri = Uri.http(
             'api.weatherapi.com', '/v1/forecast.json', queryParameters);
-       //print("hi! ");
-       //print(uri); //link works
         final response = await http.get(uri);
         if (response.statusCode == 200) {
           return WeatherFuture.fromJson(jsonDecode(response.body));

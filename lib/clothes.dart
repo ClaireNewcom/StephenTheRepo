@@ -2,29 +2,32 @@
 //import 'dart:math';
 import 'package:testingwindows/WeatherConditions.dart';
 
+///This class determines the articles of clothing that should be worn based on
+///a given weather condition and a given weather type.
+
 class Clothes {
 
   late double temp;
   late String weatherType;
 
+  ///Constructs an instance of the Clothes class with a given weatherConditions object [weatherCondition].
   Clothes(WeatherConditions weatherCondition) {
     temp = weatherCondition.getTempF();
 
     weatherType = weatherCondition.getType();
 
-
   }
 
-  Clothes.forQuiz(double temperature, String condition) {
+  /*Clothes.forQuiz(double temperature, String condition) {
     temp = temperature;
     weatherType = condition;
-  }
+  }*/
 
+  ///Returns a future List<String> based on the temp and the weatherType.
   Future<List<String>> clothingChoice() async {
     List<String> clothing = [];
 
     if (temp > 90) {
-      //print("Warning: it is too hot to stay outside for very long. We recommend staying inside with an air conditioner or fan.");
       clothing.add('shorts');
       clothing.add('t-shirt');
       clothing.add('socks');
