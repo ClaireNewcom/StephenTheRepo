@@ -28,7 +28,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   //data
   WeatherService weatherService = WeatherService();
-  WeatherNow weather = WeatherNow();
+  WeatherNow weather = const WeatherNow();
 
   String currentWeather = "";
   double tempF = 0;

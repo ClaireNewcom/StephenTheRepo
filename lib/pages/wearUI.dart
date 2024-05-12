@@ -1,8 +1,5 @@
-//import 'dart:html';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:testingwindows/WWTW.dart';
 import 'package:testingwindows/WeatherConditions.dart';
 import "package:testingwindows/weatherFuture.dart";
@@ -27,9 +24,9 @@ class wearUI extends StatefulWidget {
 class _wearUIState extends State<wearUI> {
 
   WeatherService weatherService = WeatherService();
-  WeatherNow weathernow = WeatherNow();
-  WeatherFuture weatherfuture = WeatherFuture();
-  WeatherFuture weatherfuture2 = WeatherFuture();
+  WeatherNow weathernow = const WeatherNow();
+  WeatherFuture weatherfuture = const WeatherFuture();
+  WeatherFuture weatherfuture2 = const WeatherFuture();
 
 
 
