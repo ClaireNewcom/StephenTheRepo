@@ -1,8 +1,5 @@
-//import 'dart:html';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:testingwindows/WWTW.dart';
 import 'package:testingwindows/WeatherConditions.dart';
 import "package:testingwindows/weatherFuture.dart";
@@ -17,22 +14,26 @@ class wearUI extends StatefulWidget {
   State<wearUI> createState() => _wearUIState();
 }
 
+///This class represents the page that shows what to wear of the app WeatherWear.
+///The class calls from the classes in the files apicallerweather.dart, weather.dart, and weatherFuture.dart
+///to get the current weather conditions and future weather conditions. It also provides an adaptive image
+///method which allows the page to display different clothing images based on the
+///clothing types calculated for the current and future weather types and temperatures. The main screen currently only shows temperature
+///and weather conditions for Worcester MA. The button on the lower right side
+///of the screen leads to the page described by wearUI.dart.
 class _wearUIState extends State<wearUI> {
 
   WeatherService weatherService = WeatherService();
-  WeatherNow weathernow = WeatherNow();
-  WeatherFuture weatherfuture = WeatherFuture();
-  WeatherFuture weatherfuture2 = WeatherFuture();
+  WeatherNow weathernow = const WeatherNow();
+  WeatherFuture weatherfuture = const WeatherFuture();
+  WeatherFuture weatherfuture2 = const WeatherFuture();
 
 
 
   String currentWeather = "";
   double currentTempF = 0;
-  //String futureWeather1 = "";
-  //double futureTemp1 = 0;
-  //String futureWeather2 = "";
-  //double futureTemp2 = 0;
-  String city = "Worcester"; //will have to get the city from the user and will store that as a const variable or smth
+
+  String city = "Worcester";
   List<WeatherConditions> conditionsForClothes = [];
   List<String> theStringOfChosenOnes = [];
   int listChosenLength = 0;
@@ -40,6 +41,7 @@ class _wearUIState extends State<wearUI> {
 
   bool isScrolling = false;
 
+  ///Initializes the class, and calls getWeather.
   @override
   void initState() {
     super.initState();
@@ -48,7 +50,9 @@ class _wearUIState extends State<wearUI> {
 
   }
 
-
+  ///Calls from the class WeatherService within the file apicallerweather.dart
+  ///and gets the current weather data for the given city, and also gets the future weather based on the current time.
+  ///Takes in [city], which is the city from which the current weather will be obtained as a String.
   void getWeather(String city) async {
     var now = DateTime.now();
     int hour = now.hour;
@@ -81,26 +85,20 @@ class _wearUIState extends State<wearUI> {
     });
   }
 
+  ///Takes in a List<WeatherConditions> [condition] and adds different clothing items to theStringOfChosenOnes.
   void gettingClothes(List<WeatherConditions> condition) async {
     WWTW theChosenOnes = WWTW();
-    print("hello");
-    print(condition[0].getTempF());
-    //print(condition.length);
     List<String> clothesList = await theChosenOnes.whatToWear(condition);
 
     setState(() {
-      theStringOfChosenOnes = clothesList; // Update the list inside setState
+      theStringOfChosenOnes = clothesList;
       listChosenLength = theStringOfChosenOnes.length;
     });
-    print('debug');
-      print(theStringOfChosenOnes.length);
-      print("debug2");
-    for (int i = 0; i < theStringOfChosenOnes.length; i++) {
-      print("forloop");
-      print(theStringOfChosenOnes[i]);
-    }
+
   }
 
+  ///Returns the image path that corresponds to the [input]. If the input does not
+  ///have a corresponding image path, an empty String will be returned.
   String _imgLink (String input){
     String link = "";
     switch(input){
@@ -161,6 +159,9 @@ class _wearUIState extends State<wearUI> {
       case "sandals": {
         link = "assets/icons/Sandals.png";
       } break;
+      default: {
+        link = "";
+      }
     }
     return link;
   }
@@ -168,6 +169,7 @@ class _wearUIState extends State<wearUI> {
   Implementation for _buildList was learned and modified from
   https://www.woolha.com/tutorials/flutter-customscrollview-with-slivers-examples
    */
+  ///Builds and returns a List<Widget> based on the List<String> [input]. These widgets can be displayed to the user in a list pattern.
   List<Widget> _buildList(List<String> input){
     List<Widget> listItems = [];
 
@@ -198,7 +200,10 @@ class _wearUIState extends State<wearUI> {
     return listItems;
   }
 
-
+  ///Constructs the what to wear screen User Interface. Takes in [context] and builds an
+  ///interface that shows the different clothing items the user should wear based on
+  ///the current weather and temperature, and the future weather and temperature of the day.
+  ///It displays images corresponding to the clothing items the user should wear.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -213,12 +218,6 @@ class _wearUIState extends State<wearUI> {
         ),
         centerTitle: true,
         backgroundColor: Colors.blue,
-        //leading: Container(
-        // margin: EdgeInsets.all(10),
-        //alignment: Alignment.center,
-        // decoration: const BoxDecoration(
-        //  color: Color(0xffFFFFFF)
-        //  ),
 
       ),
 

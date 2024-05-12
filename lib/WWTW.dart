@@ -2,18 +2,19 @@ import 'WeightedList.dart';
 import 'clothes.dart';
 import 'WeatherConditions.dart';
 
+///This class creates a List<String> that represents the clothing that should be
+///worn based on how many times each article of clothing is counted.
 class WWTW {
 
 	List<WeightedList> WWTWear = [];
   List<String> calculatedClothes = [];
-	//List<String> chosenClothes = [];
-
-	/*WWTW() {
-		WWTWear = [];
-		calculatedClothes = [];
-	}*/
 
 
+	///Returns a future List<String> using the input [input] of List<WeatherConditions>.
+	///The clothing class is called and creates a list of clothing items for each item in [input],
+	///and these lists are combined. A List<WeightedList> is developed, where each object of WeightedList contains
+	///a clothing item and how many times it has appeared. Based on how many times an article of clothing
+	/// is counted, clothing items are added to a list and the list is returned.
 	Future<List<String>> whatToWear(List<WeatherConditions> input) async {
 		for(int i =0; i<input.length; i++){
 			Clothes c = Clothes(input[i]);
@@ -74,28 +75,4 @@ class WWTW {
 		return chosenClothes;
 	}
 
-	/*List<String> getChosenClothes() {
-		return chosenClothes;
-	}*/
-
-/*calculatedClothes.forEach(j){
-			if(WWTW.contains(j)) {	
-        WWTW.get(WWTW.indexof(j).incrementCounter());
-			} else {
-			  WeightedList wL = new WeightedList(j,1);
-        WWTW.add(wL);
-			}
-}
-
-  List<String> chosenClothes = [];
-
-  WWTW.forEach(r) {
-	  if ( r.getcounter > 3){
-	    chosenClothes.add(r.getClothes);
-	  }
-  }
-  
-  List<String> getChosenClothes(){
-    return chosenClothes;
-  }*/
 }

@@ -5,34 +5,26 @@ Flutter! (Weather Api) made by Bytx on Youtube https://www.youtube.com/watch?v=c
 We used the api mentioned in the tutorial, and we used the code they supplied, but modified it to our needs.
  */
 
+///This class calls from the Json file from the api weather API (weatherapi.com).
 class WeatherFuture{
   final double tempF;
   final String condition;
- // final double windSpeed;
-  //final double precipitation;
 
+  ///Constructs an instance of the WeatherFuture class with an initial value of tempF = 0, and an initial condition of an empty string.
   const WeatherFuture ({
     this.tempF = 0,
     this.condition = '',
-    //this.windSpeed = 0,
-    //this.precipitation = 0,
-    //can add more
+
   });
 
+  ///Calls from the Json file from the api weather API (weatherapi.com), and sets tempF
+  /// and condition to the corresponding values in the api. Takes in a map of String [json] which is used to
+  /// call from the api.
   factory WeatherFuture.fromJson(Map<String, dynamic> json){
     return WeatherFuture(
         tempF: json['forecast']['forecastday'][0]['hour'][0]['temp_f'],
         condition: json['forecast']['forecastday'][0]['hour'][0]['condition']['text']);
-       // windSpeed: json['forecast']['forecastday']['hour']['wind_mph'],
-       // precipitation: json['forecast']['forecastday']['hour']['precip_in']);
-  } //we will need to modify for different hours I think, figure out how to do that
 
-  /*Future<double> getTemp() async {
-    return tempF;
   }
-
-  Future<String> getCondition() async {
-    return condition;
-  }*/
 
 }
